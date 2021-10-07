@@ -1,5 +1,6 @@
 const express = require('express');
 const helmet = require('helmet');
+const cors = require('cors');
 
 class ApplicationClass{
 
@@ -12,6 +13,13 @@ class ApplicationClass{
     middlewares(){
         this.express.use(express.json());
         this.express.use(helmet());
+
+        this.express.use(cors({
+            origin: '*', 
+            credentials: true,
+            optionSuccessStatus: 200,
+            methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        }));
     }
 
     routes(){

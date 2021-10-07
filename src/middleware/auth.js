@@ -5,8 +5,6 @@ const removeBearer = require('../helpers/removeBearer');
 module.exports = function(req, res, next){
     let token = req.headers.authorization;
     
-    //return res.status(401).json({message: token});
-    
     if(!token) return res.status(401).json({message: 'Token not sent.'});
 
     if (!token.startsWith("Bearer ")){

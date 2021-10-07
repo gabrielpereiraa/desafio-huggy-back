@@ -36,8 +36,8 @@ class UserController{
         if(newContact.errorMessage){
             return res.status(400).json({message: newContact.errorMessage});    
         }
-
-        return res.status(200).json({message: 'New contact created.'});
+        
+        return res.status(200).json({message: 'New contact created.', contactId: newContact.id});
     }
 
     async show(req, res){
@@ -74,7 +74,7 @@ class UserController{
         Contact.update(req.body, {where: {id: req.params.id}})
             .then(num => {
                 if (num == 1) {
-                    return res.status(200).json({message: 'Contact updated.'});
+                    return res.status(200).json({message: 'Contact updated.', contactId: req.params.id});
                 } else {
                     return res.status(404).json({message: 'Contact not found.'});
                 }
@@ -91,7 +91,7 @@ class UserController{
         Contact.destroy({where: {id: req.params.id}})
             .then(num => {
                 if (num == 1) {
-                    return res.status(200).json({message: 'Contact deleted.'});
+                    return res.status(200).json({message: 'Contact deleted.', contactId: req.params.id});
                 } else {
                     return res.status(404).json({message: 'Contact not found.'});
                 }
