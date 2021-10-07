@@ -1,0 +1,47 @@
+{
+  "development": {
+    "authorization": "8e38f3f9da795fdf1fce678dad01c967",
+    "jwtPrivateKey" : "huggyjwt",
+    "username": "root",
+    "password": "root",
+    "database": "desafio_huggy",
+    "host": "localhost",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "test": {
+    "authorization": "8e38f3f9da795fdf1fce678dad01c967",
+    "jwtPrivateKey" : "huggyjwt",
+    "username": "root",
+    "password": "root",
+    "database": "desafio_huggy_test",
+    "host": "localhost",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "production": {
+    "authorization": "8e38f3f9da795fdf1fce678dad01c967",
+    "jwtPrivateKey" : "huggyjwt",
+    "username": "root",
+    "password": null,
+    "database": "desafio_huggy_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  }
+}
