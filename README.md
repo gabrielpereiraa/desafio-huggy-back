@@ -87,7 +87,7 @@ $ npx sequelize db:migrate
 $ node src/server.js
 ```
 
-6) Insomnia v4 (.json) com todas as requisições.
+6) Insomnia v4 (.json) com todas as requisições.<br>
 https://github.com/gabrielpereiraa/desafio-huggy-back/blob/bf67c26930290b1d0ff75b78da73fd8fdda8ceb3/Insomnia
 
 ## 👷‍♂️ Contribuidores<br>
