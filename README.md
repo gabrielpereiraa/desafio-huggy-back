@@ -47,12 +47,13 @@ Funcionalidades desenvolvidas:
 Como este projeto não tem um parte de login de usuários, deve-se utilizar <b>{development.authorization}</b> para armazenar um token de autenticação. Assim o front-end ou qualquer outra aplicação, deve enviar no HEADER o Authorization = <b>{development.authorization}</b> para a api <b>/auth</b> e assim irá retornar um <b>JWT</b> para realizar as operações do CRUD.
 
 ## 🚀 Configuração e execução
-1) Para clonar o projeto, utilizaremos:
-
+1) Para clonar o projeto e instalar suas dependências, utilizaremos:
 ```
 $ git clone https://github.com/gabrielpereiraa/desafio-huggy-back.git
 $ cd desafio-huggy-back
+$ npm install
 ```
+
 2) Se o banco de dados ainda não existe, ele precisa ser criado.
 
 3) Antes de continuar, precisamos checar as configurações presentes no arquivo config/config.json:
