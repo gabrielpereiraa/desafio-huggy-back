@@ -5,7 +5,7 @@
   <p align="center">
     Backend do desafio técnico proposto pela Huggy.
     <br />
-    <a href="https://github.com/gabrielpereiraa/basic-login"><strong>Front End »</strong></a>
+    <a href="https://github.com/gabrielpereiraa/desafio-huggy-front"><strong>Front End »</strong></a>
     <br />
     <br />
     &nbsp
