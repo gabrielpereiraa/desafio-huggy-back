@@ -1,17 +1,17 @@
 <br />
 <br/>
 <p align="center" id="nome-do-projeto">
-  <h3 align="center">Basic Login</h3>
+  <h3 align="center">Desafio Huggy: Back End (API)</h3>
   <p align="center">
-    Backend de um login básico e simples.
+    Backend do desafio técnico proposto pela Huggy.
     <br />
-    <a href="https://github.com/gabrielpereiraa/basic-login"><strong>Documentação »</strong></a>
+    <a href="https://github.com/gabrielpereiraa/basic-login"><strong>Front End »</strong></a>
     <br />
     <br />
     &nbsp
     <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
     &nbsp
-    <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+    <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" />
     &nbsp
     <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
   </p>
@@ -20,62 +20,74 @@
 <br/>
 
 ## 🖥️ Sobre o projeto
-Este projeto tem apenas um propósito: disponibilizar toda a parte backend do Module Login, em um código-fonte simples e sem complexidade.
+Este projeto contém todas as API's que vão ser necessárias para realizar as operações do CRUD.
 
-> Este projeto foi desenvolvido apenas para fins educacionais. Use-o para aprender, experimentar, mexer e praticar.
+> Este projeto foi desenvolvido apenas avalição de aptidão.
 
 ## 📃 Funcionalidades
 
-O projeto ainda está em desenvolvimento. Funcionalidades até o momento:
+Funcionalidades desenvolvidas:
 
-- [x] Realizar Cadastro
-- [x] Realizar Login (JWT)
-- [x] Resetar Senha
+- [x] Cadastro de contatos  | POST /contacts
+- [x] Alteração de contatos | PUT /contacts
+- [x] Exclusão de contatos | DELETE /contacts
+- [x] Listagem de contatos | GET /contacts
+- [x] Autenticação (JWT) para operações do CRUD |  POST /auth
 - [ ] ??
 
 ## 🛠️ Tecnologias utilizadas
 <p align="left">
   💻 Linguagem: Javascript (Node.js) <br>
-  💾 Banco de Dados: MongoDB (noSQL) <br>
+  💾 Banco de Dados: MySQL (SQL) <br>
   📚 Framework: Express.js <br>
   📑 Framework para teste: Jest <br>
-  💼 Metodologia: TDD (Test driven development) <br>
 </p>
 
-## 🚀 Instalação e execução
-Antes de executarmos o projeto, precisamos definir algumas environment variables, como:
+## 📋 Observações
+Como este projeto não tem um parte de login de usuários, deve-se utilizar <b>{development.authorization}</b> para armazenar um token de autenticação. Assim o front-end ou qualquer outra aplicação, deve enviar no HEADER o Authorization = <b>{development.authorization}</b> para a api <b>/auth</b> e assim irá retornar um <b>JWT</b> para realizar as operações do CRUD.
+
+## 🚀 Configuração e execução
+1) Para clonar o projeto, utilizaremos:
+
+```
+$ git clone https://github.com/gabrielpereiraa/desafio-huggy-back.git
+$ cd desafio-huggy-back
+```
+2) Se o banco de dados ainda não existe, ele precisa ser criado.
+
+3) Antes de continuar, precisamos checar as configurações presentes no arquivo config/config.json:
 
 ```
 {
-  "jwtPrivateKey" : "jwtPrivateKey",
-  "DB_HOST" : "DB_HOST",
-  "DB_USER" : "DB_USER",
-  "DB_PASS" : "DB_PASSWORD",
-  "smtpOptions" : {
-    "host": "SMTP_HOST",
-    "port": "SMTP_PORT",
-    "secure": "SMTP_SECURE", 
-    "auth": {
-        "user": "SMTP_USER",
-        "pass": "SMTP_PASS"
+  "development": {
+    "authorization": "8e38f3f9da795fdf1fce678dad01c967",
+    "jwtPrivateKey" : "huggyjwt",
+    "username": "root",
+    "password": "root",
+    "database": "desafio_huggy",
+    "host": "localhost",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
     }
   }
-}
-```
-    
-Para clonar o projeto, utilizaremos o seguinte comando:
-
-Linux e macOS:
-```
-$ git clone https://github.com/gabrielpereiraa/basic-login.git
-$ cd basic-login
+ }
 ```
 
-Windows:
+4) É necessário executar a migration do module Contact. Para isso executamos o seguinte comando:
 ```
-$ git clone https://github.com/gabrielpereiraa/basic-login.git
-$ cd basic-login
+$ npx sequelize db:migrate
 ```
+
+5) Rodar!
+```
+$ node src/server.js
+```
+
+6) Insomnia v4 (.json) com todas as requisições.
 
 ## 👷‍♂️ Contribuidores<br>
 <table>
@@ -90,16 +102,6 @@ $ cd basic-login
     </td>
   </tr>
 </table>
-
-## 📱 Contato
-Para mais informações sobre o projeto, entre em contato utilizando:
-<p align="left">
-  <a href="#" alt="Linkedin">
-  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=LINK-DO-SEU-LINKEDIN" /></a>
-
-  <a href="#" alt="Instagram">
-  <img src="https://img.shields.io/badge/-Instagram-DF0174?style=flat-square&labelColor=DF0174&logo=instagram&logoColor=white&link=LINK-DO-SEU-INSTAGRAM"/></a>
-</p>  
 <br>
 
 [⬆ Voltar ao topo](#nome-do-projeto)<br>
